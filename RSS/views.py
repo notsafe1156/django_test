@@ -79,20 +79,18 @@ class DataViewSet(viewsets.ModelViewSet):
     def request_test(self, request):
         return HttpResponseRedirect('https://ffbd6e99.ngrok.io/templates/test2')
 
-    #刪除
+    # 刪除
     @action(methods=['delete'], detail=False)
     def delete(self, request):
         id = request.data.get('id')
         result = delete_byid(id)
         if result:
-            result = '刪除成功:'+str(id)
+            result = '刪除成功:' + str(id)
         else:
             result = '刪除失敗'
         return Response(result, status.HTTP_200_OK)
-
 
     @action(methods=['get'], detail=False)
     def get_text(self, request):
         result = getfulltext()
         return Response(result, status.HTTP_200_OK)
-
