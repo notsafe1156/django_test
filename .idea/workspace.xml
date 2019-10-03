@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42781314-3378-4c64-beb1-8a3644049030" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RSS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RSS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +164,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570020128971</updated>
-      <workItem from="1570020130057" duration="5178000" />
+      <workItem from="1570020130057" duration="6680000" />
+      <workItem from="1570057417035" duration="602000" />
+      <workItem from="1570062777746" duration="590000" />
+      <workItem from="1570101303843" duration="4431000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1570023943102</created>
@@ -173,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570023943102</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1570025345767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570025345767</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +191,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="237" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
@@ -190,15 +201,17 @@
     <state x="567" y="347" key="FileChooserDialogImpl/1920.1080" />
     <state x="905" y="411" key="Github.ShareDialog" />
     <state x="905" y="411" key="Github.ShareDialog/1920.1080" />
-    <state width="1807" height="295" key="GridCell.Tab.0.bottom" />
-    <state width="1807" height="295" key="GridCell.Tab.0.bottom/1920.1080" />
-    <state width="1807" height="295" key="GridCell.Tab.0.center" />
-    <state width="1807" height="295" key="GridCell.Tab.0.center/1920.1080" />
-    <state width="1807" height="295" key="GridCell.Tab.0.left" />
-    <state width="1807" height="295" key="GridCell.Tab.0.left/1920.1080" />
-    <state width="1807" height="295" key="GridCell.Tab.0.right" />
-    <state width="1807" height="295" key="GridCell.Tab.0.right/1920.1080" />
+    <state width="1340" height="265" key="GridCell.Tab.0.bottom" />
+    <state width="1340" height="265" key="GridCell.Tab.0.bottom/1920.1080" />
+    <state width="1340" height="265" key="GridCell.Tab.0.center" />
+    <state width="1340" height="265" key="GridCell.Tab.0.center/1920.1080" />
+    <state width="1340" height="265" key="GridCell.Tab.0.left" />
+    <state width="1340" height="265" key="GridCell.Tab.0.left/1920.1080" />
+    <state width="1340" height="265" key="GridCell.Tab.0.right" />
+    <state width="1340" height="265" key="GridCell.Tab.0.right/1920.1080" />
     <state x="517" y="273" key="Vcs.Push.Dialog.v2" />
     <state x="517" y="273" key="Vcs.Push.Dialog.v2/1920.1080" />
+    <state x="462" y="325" key="com.intellij.ide.util.TipDialog" />
+    <state x="462" y="325" key="com.intellij.ide.util.TipDialog/1920.1080" />
   </component>
 </project>

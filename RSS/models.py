@@ -116,6 +116,7 @@ def verify_account(**kwargs):
         cursor.execute("update members\
                         set hash = %s\
                         where account = %s", [member_hash, account])
+        print(member_hash)
         return member_hash
     return result
 
@@ -128,6 +129,7 @@ def check_hash(account, hashnum):
                     from members\
                     where account = '%s'" % (account))
     re = cursor.fetchone()
+    print(re[0])
 
     if re[0] == hashnum:
         return True

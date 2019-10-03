@@ -62,8 +62,10 @@ class DataViewSet(viewsets.ModelViewSet):
         account = request.data.get('account')
         print(str(longin_hash))
         if check_hash(account, longin_hash):
+            print('------------')
             data = dbget_info_min()
             return Response(data, status=status.HTTP_200_OK)
+        print('+++++++++++++')
         return Response(False, status=status.HTTP_200_OK)
 
     # 弄做登入用，輸入正確傳回帳號做hash
@@ -72,7 +74,8 @@ class DataViewSet(viewsets.ModelViewSet):
         account = request.data.get('account')
         password = request.data.get('password')
         result = verify_account(account=account, password=password)
-        return Response(result, status=status.HTTP_200_OK)
+
+        return Response(str(result), status=status.HTTP_200_OK)
 
     # 測試用
     @action(methods=['get'], detail=False)
@@ -83,6 +86,9 @@ class DataViewSet(viewsets.ModelViewSet):
     @action(methods=['delete'], detail=False)
     def delete(self, request):
         id = request.data.get('id')
+        print(request.data)
+        print(id)
+        print(type(id))
         result = delete_byid(id)
         if result:
             result = '刪除成功:' + str(id)
