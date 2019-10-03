@@ -44,33 +44,38 @@ def update_text(**kwargs):
     tag = kwargs.get('tag')
     display = kwargs.get('display')
     id = kwargs.get('id')
+    print(category, tag, display, id)
+    cursor = connection.cursor()
+    cursor.execute("update data\
+                            set\
+                                category = '%s',\
+                                tag = '%s',\
+                                display = '%s'\
+                            where id = '%s'" % (category, tag, display, id))
+    num = cursor.rowcount
+    return num
 
-    with connection.cursor() as cursor:
-        cursor.execute("update data\
-                        set\
-                            category = %s,\
-                            tag = %s,\
-                            display = %s\
-                        where id = %s", [category, tag, display, id])
-        cursor.execute("select * from data where id = %s", [id])
-        result = nametuplefetchall(cursor)
-        result = [
-            {
-                'id': r.id,
-                'title': r.title,
-                'time': r.time,
-                'link': r.link,
-                'author': r.author,
-                'text': r.text,
-                'images': r.images,
-                'category': r.category,
-                'tag': r.tag,
-                'display': r.display
-            }
-            for r in result
-        ]
+    # with connection.cursor() as cursor:
 
-        return result
+        # cursor.execute("select * from data where id = %s", [id])
+        # result = nametuplefetchall(cursor)
+        # result = [
+        #     {
+        #         'id': r.id,
+        #         'title': r.title,
+        #         'time': r.time,
+        #         'link': r.link,
+        #         'author': r.author,
+        #         'text': r.text,
+        #         'images': r.images,
+        #         'category': r.category,
+        #         'tag': r.tag,
+        #         'display': r.display
+        #     }
+        #     for r in result
+        # ]
+        #
+        # return result
 
 
 def nametuplefetchall(cursor):

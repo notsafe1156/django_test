@@ -47,13 +47,16 @@ class DataViewSet(viewsets.ModelViewSet):
     @action(methods=['put'], detail=False)
     def update_text(self, request, pk=None):
         print(request.data)
-        id = request.query_params.get('id')
-        print(request.query_params)
+        id = request.data.get('id')
         category = request.data.get('category')
         tag = request.data.get('tag')
         display = request.data.get('display')
         data = update_text(id=id, category=category, tag=tag, display=display)
-        return Response(data, status=status.HTTP_200_OK)
+        if data:
+            result = '更新完成'
+        else:
+            result = '更新失敗'
+        return Response(result, status=status.HTTP_200_OK)
 
     # 拿後臺主頁資料
     @action(methods=['post'], detail=False)
