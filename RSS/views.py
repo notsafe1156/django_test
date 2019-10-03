@@ -101,5 +101,7 @@ class DataViewSet(viewsets.ModelViewSet):
 
     @action(methods=['get'], detail=False)
     def get_text(self, request):
-        result = getfulltext()
+        id = request.query_params.get('id', None)
+        result = getfulltext(id=id)
         return Response(result, status.HTTP_200_OK)
+

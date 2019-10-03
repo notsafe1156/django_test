@@ -150,11 +150,17 @@ def delete_byid(id):
     return result
 
 
-def getfulltext():
+def getfulltext(**kwargs):
+    id = kwargs.get('id')
     cursor = connection.cursor()
-    cursor.execute("select id, title, time, author, text, images, source\
-                    from data\
-                    where display = 't'")
+    if id:
+        cursor.execute("select id, title, time, author, text, images, source\
+                        from data\
+                        where display = 't' and id = '%s'" % (id))
+    else:
+        cursor.execute("select id, title, time, author, text, images, source\
+                                from data\
+                                where display = 't'")
     result = nametuplefetchall(cursor)
     result = [
         {'id': r.id,
