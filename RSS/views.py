@@ -78,8 +78,9 @@ class DataViewSet(viewsets.ModelViewSet):
         account = request.data.get('account')
         password = request.data.get('password')
         result = verify_account(account=account, password=password)
-
-        return Response(str(result), status=status.HTTP_200_OK)
+        if result:
+            result = str(result)
+        return Response(result, status=status.HTTP_200_OK)
 
     # 測試用
     @action(methods=['get'], detail=False)
@@ -122,3 +123,5 @@ class DataViewSet(viewsets.ModelViewSet):
     def get_source(self, request):
         result = return_source()
         return Response(result, status.HTTP_200_OK)
+
+
