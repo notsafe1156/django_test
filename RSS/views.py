@@ -109,8 +109,10 @@ class DataViewSet(viewsets.ModelViewSet):
     @action(methods=['get'], detail=False)
     def return_by_source(self, request):
         source = request.query_params.get('source', None)
-        print(source)
-        print(type(source))
         result = get_text_by_source_server(source)
         return Response(result, status.HTTP_200_OK)
+
+    @action(methods=['get'], detail=False)
+    def get_text_by_source(self, request):
+        source = request.query_params.get('source', None)
 
