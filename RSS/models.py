@@ -185,3 +185,13 @@ def get_text_by_source_server(source):
     result = cursor.fetchall()
     print(result)
     return result
+
+
+def get_text_by_source_client(source):
+    cursor = connection.cursor()
+    cursor.execute("select id, title, category, time, text, images\
+                    from data\
+                    where source = '%s'" % (source))
+    result = cursor.fetchall()
+    print(result)
+    return result
