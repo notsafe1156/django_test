@@ -193,5 +193,17 @@ def get_text_by_source_client(source):
                     from data\
                     where source = '%s'" % (source))
     result = cursor.fetchall()
+    return result
+
+
+def return_source():
+    cursor = connection.cursor()
+    cursor.execute("select source\
+                    from data\
+                    group by source")
+    result = cursor.fetchall()
+
     print(result)
+    print(type(result[0]))
+    print(result[0])
     return result
