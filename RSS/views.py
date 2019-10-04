@@ -1,6 +1,7 @@
 from RSS.models import Data
 from RSS.serializers import DataSerializer
 from RSS.models import fund_datas, update_text, dbget_info_min, verify_account, check_hash, delete_byid, getfulltext
+from RSS.models import get_text_by_source_server
 
 from rest_framework.decorators import action
 from rest_framework import viewsets, status
@@ -103,5 +104,13 @@ class DataViewSet(viewsets.ModelViewSet):
     def get_text(self, request):
         id = request.query_params.get('id', None)
         result = getfulltext(id=id)
+        return Response(result, status.HTTP_200_OK)
+
+    @action(methods=['get'], detail=False)
+    def return_by_source(self, request):
+        source = request.query_params.get('source', None)
+        print(source)
+        print(type(source))
+        result = get_text_by_source_server(source)
         return Response(result, status.HTTP_200_OK)
 

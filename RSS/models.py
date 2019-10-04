@@ -57,25 +57,25 @@ def update_text(**kwargs):
 
     # with connection.cursor() as cursor:
 
-        # cursor.execute("select * from data where id = %s", [id])
-        # result = nametuplefetchall(cursor)
-        # result = [
-        #     {
-        #         'id': r.id,
-        #         'title': r.title,
-        #         'time': r.time,
-        #         'link': r.link,
-        #         'author': r.author,
-        #         'text': r.text,
-        #         'images': r.images,
-        #         'category': r.category,
-        #         'tag': r.tag,
-        #         'display': r.display
-        #     }
-        #     for r in result
-        # ]
-        #
-        # return result
+    # cursor.execute("select * from data where id = %s", [id])
+    # result = nametuplefetchall(cursor)
+    # result = [
+    #     {
+    #         'id': r.id,
+    #         'title': r.title,
+    #         'time': r.time,
+    #         'link': r.link,
+    #         'author': r.author,
+    #         'text': r.text,
+    #         'images': r.images,
+    #         'category': r.category,
+    #         'tag': r.tag,
+    #         'display': r.display
+    #     }
+    #     for r in result
+    # ]
+    #
+    # return result
 
 
 def nametuplefetchall(cursor):
@@ -174,4 +174,14 @@ def getfulltext(**kwargs):
         for r in result
     ]
     cursor.close()
+    return result
+
+
+def get_text_by_source_server(source):
+    cursor = connection.cursor()
+    cursor.execute("select id, title, source, category, tag, display\
+                    from data\
+                    where source = '%s'" % (source))
+    result = cursor.fetchall()
+    print(result)
     return result
