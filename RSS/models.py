@@ -255,6 +255,15 @@ def get_info_in_page_client(**kwargs):
     cursor.execute(sql)
     num = cursor.fetchone()
     print(num)
+    cursor.close()
     
     return result, num
 
+def search_data(title):
+    cursor = connection.cursor()
+    cursor.execute("select id, title, source, category, tag, display\
+                    from data\
+                    where (select title ~ '%s')" % (title))
+    result = cursor.fetchall()
+    cursor.close()
+    return result
