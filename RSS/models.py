@@ -232,3 +232,29 @@ def get_info_in_page_server(**kwargs):
     
     return result, num
 
+
+def get_info_in_page_client(**kwargs):
+    page = kwargs.get('page')
+    source = kwargs.get('source')
+
+    cursor = connection.cursor()
+    sql = "select id, title, time,text, images\
+                    from data\n\
+                    where display = 't'"
+    
+    if source:
+        sql += " and source = '%s'" %(source)
+    sql += "\nlimit 12 offset "+str((page-1)*20)
+    print(sql)
+    cursor.execute(sql)
+    result = cursor.fetchall()
+
+    sql = "select count(id) from data"
+    if source:
+        sql += " where display = 't' and source = '%s'" %(source)
+    cursor.execute(sql)
+    num = cursor.fetchone()
+    print(num)
+    
+    return result, num
+

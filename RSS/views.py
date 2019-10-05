@@ -1,7 +1,8 @@
 from RSS.models import Data
 from RSS.serializers import DataSerializer
 from RSS.models import fund_datas, update_text, dbget_info_min, verify_account, check_hash, delete_byid, getfulltext
-from RSS.models import get_text_by_source_server, get_text_by_source_client, return_source, get_info_in_page_server
+from RSS.models import get_text_by_source_server, get_text_by_source_client, return_source, get_info_in_page_server,\
+    get_info_in_page_client
 from rest_framework.decorators import action
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -130,6 +131,16 @@ class DataViewSet(viewsets.ModelViewSet):
 
         result = get_info_in_page_server(page=int(page), source=source)
         return Response(result, status.HTTP_200_OK)  
+
+    @action(methods=['get'], detail=False)
+    def get_text_for_page(self, request):
+        page = request.query_params.get('page',None)
+        source = request.query_params.get('source', None)
+
+        result = get_info_in_page_client(page=int(page), source=source)
+        return Response(result, status.HTTP_200_OK)
+
+
         
 
 
