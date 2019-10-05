@@ -223,6 +223,8 @@ def get_info_in_page_server(**kwargs):
     result = cursor.fetchall()
 
     sql = "select count(id) from data"
+    if source:
+        sql += " where source = '%s'" %(source)
     cursor.execute(sql)
     num = cursor.fetchone()
     print(num)
