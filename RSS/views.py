@@ -125,7 +125,7 @@ class DataViewSet(viewsets.ModelViewSet):
 
     @action(methods=['get'], detail=False)
     def get_info_for_page(self, request):
-        page = request.query_params.get('pages',None)
+        page = request.query_params.get('page',None)
         source = request.query_params.get('source', None)
 
         result = get_info_in_page_server(page=int(page), source=source)
