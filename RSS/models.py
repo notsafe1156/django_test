@@ -183,7 +183,7 @@ def get_text_by_source_server(source):
                     from data\
                     where source = '%s'" % (source))
     result = cursor.fetchall()
-    print(result)
+    cursor.close()
     return result
 
 
@@ -193,6 +193,7 @@ def get_text_by_source_client(source):
                     from data\
                     where source = '%s'" % (source))
     result = cursor.fetchall()
+    cursor.close()
     return result
 
 
@@ -202,8 +203,30 @@ def return_source():
                     from data\
                     group by source")
     result = cursor.fetchall()
-
+    cursor.close()
     print(result)
     print(type(result[0]))
     print(result[0])
     return result
+
+def get_info_in_page_server(**kwargs):
+    page = kwargs.get('page')
+    source = kwargs.get('source')
+
+    cursor = connection.cursor()
+    sql = "select id, title, source, category, tag, display\
+                    from data\n"
+    if source:
+        sql += "where source = '%s'\n" %(source)
+    sql += "limit 20 offset "+str((page-1)*20)
+    cursor.execute(sql)
+    result = cursor.fetchall()
+
+    sql = "select count(id) from data"
+    cursor.execute(sql)
+    num = cursor.fetchone()
+    print(num)
+    # result.append(num)
+    
+    return result, num
+
