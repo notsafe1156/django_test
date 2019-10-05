@@ -244,7 +244,7 @@ def get_info_in_page_client(**kwargs):
     
     if source:
         sql += " and source = '%s'" %(source)
-    sql += "\nlimit 12 offset "+str((page-1)*20)
+    sql += "\nlimit 12 offset "+str((page-1)*12)
     print(sql)
     cursor.execute(sql)
     result = cursor.fetchall()
