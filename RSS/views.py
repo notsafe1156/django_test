@@ -124,4 +124,9 @@ class DataViewSet(viewsets.ModelViewSet):
         result = return_source()
         return Response(result, status.HTTP_200_OK)
 
+    @action(methods=['get'], detail=False)
+    def get_info_for_page(self, request):
+        page = request.query_params.get('pages',None)
+        
+
 
