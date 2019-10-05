@@ -101,29 +101,34 @@ class DataViewSet(viewsets.ModelViewSet):
             result = '刪除失敗'
         return Response(result, status.HTTP_200_OK)
 
+    # 用ID拿文章
     @action(methods=['get'], detail=False)
     def get_text(self, request):
         id = request.query_params.get('id', None)
         result = getfulltext(id=id)
         return Response(result, status.HTTP_200_OK)
 
+    # 用source取後台的資料   廢棄，改用下面的get_info_for_page
     @action(methods=['get'], detail=False)
     def return_by_source(self, request):
         source = request.query_params.get('source', None)
         result = get_text_by_source_server(source)
         return Response(result, status.HTTP_200_OK)
 
+    # 用source取網頁的文章  廢棄，改用下面的get_text_for_page
     @action(methods=['get'], detail=False)
     def get_text_by_source(self, request):
         source = request.query_params.get('source', None)
         result = get_text_by_source_client(source)
         return Response(result, status.HTTP_200_OK)
 
+    # 取得所有的source
     @action(methods=['get'], detail=False)
     def get_source(self, request):
         result = return_source()
         return Response(result, status.HTTP_200_OK)
 
+    # 取得後台的資料，並且以20個以頁數來回傳資料  source 選擇
     @action(methods=['get'], detail=False)
     def get_info_for_page(self, request):
         page = request.query_params.get('page',None)
@@ -132,6 +137,7 @@ class DataViewSet(viewsets.ModelViewSet):
         result = get_info_in_page_server(page=int(page), source=source)
         return Response(result, status.HTTP_200_OK)  
 
+    # 網頁瀏覽的文章，以12為單位藉由頁數回傳資料  source 可選
     @action(methods=['get'], detail=False)
     def get_text_for_page(self, request):
         page = request.query_params.get('page',None)
@@ -140,6 +146,7 @@ class DataViewSet(viewsets.ModelViewSet):
         result = get_info_in_page_client(page=int(page), source=source)
         return Response(result, status.HTTP_200_OK)
 
+    # 後台搜尋文章
     @action(methods=['get'], detail=False)
     def search_data(self, request):
         title = request.query_params.get('title', None)

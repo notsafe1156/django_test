@@ -176,7 +176,7 @@ def getfulltext(**kwargs):
     cursor.close()
     return result
 
-
+#　廢棄用
 def get_text_by_source_server(source):
     cursor = connection.cursor()
     cursor.execute("select id, title, source, category, tag, display\
@@ -187,6 +187,7 @@ def get_text_by_source_server(source):
     return result
 
 
+# 廢棄用
 def get_text_by_source_client(source):
     cursor = connection.cursor()
     cursor.execute("select id, title, category, time, text, images\
