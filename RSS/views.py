@@ -129,12 +129,13 @@ class DataViewSet(viewsets.ModelViewSet):
         return Response(result, status.HTTP_200_OK)
 
     # 取得後台的資料，並且以20個以頁數來回傳資料  source 選擇
-    @action(methods=['get'], detail=False)
+    @action(methods=['post'], detail=False)
     def get_info_for_page(self, request):
         page = request.query_params.get('page',None)
         source = request.query_params.get('source', None)
         account = request.data.get('account')
         login_hash = request.data.get('login_hash')
+        print(page, source, account, login_hash)
         
         if check_hash(account, login_hash):
             result = get_info_in_page_server(page=int(page), source=source)
