@@ -133,9 +133,27 @@ class DataViewSet(viewsets.ModelViewSet):
     def get_info_for_page(self, request):
         page = request.query_params.get('page',None)
         source = request.query_params.get('source', None)
+        account = request.data.get('account')
+        login_hash = request.data.get('login_hash')
+        
+        if check_hash(account, login_hash):
+            result = get_info_in_page_server(page=int(page), source=source)
+        else:
+            result = False
+        return Response(result, status.HTTP_200_OK)
 
-        result = get_info_in_page_server(page=int(page), source=source)
-        return Response(result, status.HTTP_200_OK)  
+    # 後台搜尋文章
+    @action(methods=['get'], detail=False)
+    def search_data(self, request):
+        title = request.query_params.get('title', None)
+        account = request.data.get('account')
+        login_hash = request.data.get('login_hash')
+
+        if check_hash(account,login_hash):
+            result = search_data(title)
+        else:
+            result = False
+        return Response(result, status.HTTP_200_OK)
 
     # 網頁瀏覽的文章，以12為單位藉由頁數回傳資料  source 可選
     @action(methods=['get'], detail=False)
@@ -145,16 +163,6 @@ class DataViewSet(viewsets.ModelViewSet):
 
         result = get_info_in_page_client(page=int(page), source=source)
         return Response(result, status.HTTP_200_OK)
-
-    # 後台搜尋文章
-    @action(methods=['get'], detail=False)
-    def search_data(self, request):
-        title = request.query_params.get('title', None)
-
-        result = search_data(title)
-        return Response(result, status.HTTP_200_OK)
-
-
         
 
 

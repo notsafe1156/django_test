@@ -80,6 +80,7 @@ def update_text(**kwargs):
 
 def nametuplefetchall(cursor):
     desc = cursor.description
+    print(desc)
     nt_result = namedtuple('Result', [col[0] for col in desc])
     return [nt_result(*row) for row in cursor.fetchall()]
 
