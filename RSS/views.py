@@ -2,7 +2,7 @@ from RSS.models import Data
 from RSS.serializers import DataSerializer
 from RSS.models import fund_datas, update_text, dbget_info_min, verify_account, check_hash, delete_byid, getfulltext
 from RSS.models import get_text_by_source_server, get_text_by_source_client, return_source, get_info_in_page_server, \
-    get_info_in_page_client, search_data, get_source
+    get_info_in_page_client, search_data, get_source, insert_source, delete_source
 from rest_framework.decorators import action
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -173,4 +173,17 @@ class DataViewSet(viewsets.ModelViewSet):
             result = get_source()
         else:
             result = False
+        return Response(result, status.HTTP_200_OK)
+
+    @action(methods=['post'], detail=False)
+    def add_source(self, request):
+        name = request.data.get('name')
+        link = request.data.get('link')
+        result = insert_source(name, link)
+        return Response(result, status.HTTP_200_OK)
+
+    @action(methods=['delete'], detail=False)
+    def delete_source(self, request):
+        id = request.data.get('id')
+        result = delete_source(id)
         return Response(result, status.HTTP_200_OK)

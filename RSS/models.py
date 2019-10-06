@@ -283,3 +283,20 @@ def get_source():
     cursor.close()
     print(result)
     return result
+
+
+def insert_source(name, url):
+    cursor = connection.cursor()
+    cursor.execute("insert into source (name, url)\
+                    values ('%s', '%s');" % (name, url))
+    cursor.close()
+    return True
+
+
+def delete_source(id):
+    cursor = connection.cursor()
+    cursor.execute("delete from source\
+                    where id = '%s'" % (id))
+    result = cursor.rowcount
+    cursor.close()
+    return result
