@@ -177,7 +177,8 @@ def getfulltext(**kwargs):
     cursor.close()
     return result
 
-#　廢棄用
+
+# 　廢棄用
 def get_text_by_source_server(source):
     cursor = connection.cursor()
     cursor.execute("select id, title, source, category, tag, display\
@@ -211,6 +212,7 @@ def return_source():
     print(result[0])
     return result
 
+
 def get_info_in_page_server(**kwargs):
     page = kwargs.get('page')
     source = kwargs.get('source')
@@ -219,19 +221,19 @@ def get_info_in_page_server(**kwargs):
     sql = "select id, title, source, category, tag, display\
                     from data\n"
     if source:
-        sql += "where source = '%s'\n" %(source)
-    sql += "limit 20 offset "+str((page-1)*20)
+        sql += "where source = '%s'\n" % (source)
+    sql += "limit 20 offset " + str((page - 1) * 20)
     cursor.execute(sql)
     result = cursor.fetchall()
 
     sql = "select count(id) from data"
     if source:
-        sql += " where source = '%s'" %(source)
+        sql += " where source = '%s'" % (source)
     cursor.execute(sql)
     num = cursor.fetchone()
     print(num)
     # result.append(num)
-    
+
     return result, num
 
 
@@ -243,23 +245,24 @@ def get_info_in_page_client(**kwargs):
     sql = "select id, title, time,text, images\
                     from data\n\
                     where display = 't'"
-    
+
     if source:
-        sql += " and source = '%s'" %(source)
-    sql += "\nlimit 12 offset "+str((page-1)*12)
+        sql += " and source = '%s'" % (source)
+    sql += "\nlimit 12 offset " + str((page - 1) * 12)
     print(sql)
     cursor.execute(sql)
     result = cursor.fetchall()
 
     sql = "select count(id) from data"
     if source:
-        sql += " where display = 't' and source = '%s'" %(source)
+        sql += " where display = 't' and source = '%s'" % (source)
     cursor.execute(sql)
     num = cursor.fetchone()
     print(num)
     cursor.close()
-    
+
     return result, num
+
 
 def search_data(title):
     cursor = connection.cursor()
@@ -268,4 +271,15 @@ def search_data(title):
                     where (select title ~ '%s')" % (title))
     result = cursor.fetchall()
     cursor.close()
+    return result
+
+
+def get_source():
+    cursor = connection.cursor()
+    cursor.execute("select *\
+                    from source\
+                    order by id")
+    result = cursor.fetchall()
+    cursor.close()
+    print(result)
     return result
