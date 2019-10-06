@@ -144,7 +144,7 @@ class DataViewSet(viewsets.ModelViewSet):
         return Response(result, status.HTTP_200_OK)
 
     # 後台搜尋文章
-    @action(methods=['get'], detail=False)
+    @action(methods=['post'], detail=False)
     def search_data(self, request):
         title = request.query_params.get('title', None)
         account = request.data.get('account')
