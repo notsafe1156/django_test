@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42781314-3378-4c64-beb1-8a3644049030" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff/storage_v2/_src_/database/d5bohq4onavh67.iNrMlw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff/storage_v2/_src_/database/d5bohq4onavh67.iNrMlw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RSS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RSS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/views.py" afterDir="false" />
@@ -176,7 +178,9 @@
       <workItem from="1570110603551" duration="1555000" />
       <workItem from="1570157476920" duration="182000" />
       <workItem from="1570190943343" duration="9277000" />
-      <workItem from="1570354974936" duration="6342000" />
+      <workItem from="1570354974936" duration="6527000" />
+      <workItem from="1570376157987" duration="147000" />
+      <workItem from="1570437216321" duration="1586000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1570023943102</created>
@@ -262,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570367730039</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update insert_source and delete_source">
+      <created>1570369793325</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570369793325</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +287,8 @@
     <MESSAGE value="update login" />
     <MESSAGE value="update" />
     <MESSAGE value="update get_source" />
-    <option name="LAST_COMMIT_MESSAGE" value="update get_source" />
+    <MESSAGE value="update insert_source and delete_source" />
+    <option name="LAST_COMMIT_MESSAGE" value="update insert_source and delete_source" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="237" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
@@ -285,22 +297,28 @@
     <state x="567" y="347" key="FileChooserDialogImpl/1920.1080" />
     <state x="905" y="411" key="Github.ShareDialog" />
     <state x="905" y="411" key="Github.ShareDialog/1920.1080" />
-    <state width="1807" height="294" key="GridCell.Tab.0.bottom" />
-    <state width="1807" height="294" key="GridCell.Tab.0.bottom/1920.1080" />
-    <state width="1807" height="294" key="GridCell.Tab.0.center" />
-    <state width="1807" height="294" key="GridCell.Tab.0.center/1920.1080" />
-    <state width="1807" height="294" key="GridCell.Tab.0.left" />
-    <state width="1807" height="294" key="GridCell.Tab.0.left/1920.1080" />
-    <state width="1807" height="294" key="GridCell.Tab.0.right" />
-    <state width="1807" height="294" key="GridCell.Tab.0.right/1920.1080" />
+    <state width="1244" height="239" key="GridCell.Tab.0.bottom" />
+    <state width="1244" height="239" key="GridCell.Tab.0.bottom/1920.1080" />
+    <state width="1244" height="239" key="GridCell.Tab.0.center" />
+    <state width="1244" height="239" key="GridCell.Tab.0.center/1920.1080" />
+    <state width="1244" height="239" key="GridCell.Tab.0.left" />
+    <state width="1244" height="239" key="GridCell.Tab.0.left/1920.1080" />
+    <state width="1244" height="239" key="GridCell.Tab.0.right" />
+    <state width="1244" height="239" key="GridCell.Tab.0.right/1920.1080" />
+    <state width="218" height="375" key="HiddenNamespacesPopup" />
+    <state width="218" height="375" key="HiddenNamespacesPopup/1920.1080" />
     <state x="554" y="298" key="SettingsEditor" />
     <state x="554" y="298" key="SettingsEditor/1920.1080" />
     <state x="517" y="273" key="Vcs.Push.Dialog.v2" />
     <state x="517" y="273" key="Vcs.Push.Dialog.v2/1920.1080" />
+    <state x="731" y="418" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" />
+    <state x="731" y="418" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1/1920.1080" />
+    <state x="805" y="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" />
+    <state x="805" y="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.1080" />
     <state x="796" y="421" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1" />
     <state x="796" y="421" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1/1920.1080" />
-    <state x="634" y="210" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" />
-    <state x="634" y="210" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.1080" />
+    <state x="646" y="203" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" />
+    <state x="646" y="203" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.1080" />
     <state x="462" y="325" key="com.intellij.ide.util.TipDialog" />
     <state x="462" y="325" key="com.intellij.ide.util.TipDialog/1920.1080" />
     <state x="778" y="490" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate" />

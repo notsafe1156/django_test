@@ -285,12 +285,22 @@ def get_source():
     return result
 
 
-def insert_source(name, url):
+def insert_source(**kwargs):
+    name = kwargs.get('name')
+    url = kwargs.get('url')
+    id = kwargs.get('id')
     cursor = connection.cursor()
-    cursor.execute("insert into source (name, url)\
-                    values ('%s', '%s');" % (name, url))
+
+    if id:
+        sql = "insert into source (id, name, url)\
+                            values ('%s', '%s', '%s');" % (id, name, url)
+    else:
+        sql = "insert into source (name, url)\
+                            values ('%s', '%s');" % (name, url)
+    cursor.execute(sql)
+    result = cursor.rowcount
     cursor.close()
-    return True
+    return result
 
 
 def delete_source(id):

@@ -179,7 +179,8 @@ class DataViewSet(viewsets.ModelViewSet):
     def add_source(self, request):
         name = request.data.get('name')
         link = request.data.get('link')
-        result = insert_source(name, link)
+        id = request.data.get("id", None)
+        result = insert_source(name=name, link=link, id=id)
         return Response(result, status.HTTP_200_OK)
 
     @action(methods=['delete'], detail=False)
