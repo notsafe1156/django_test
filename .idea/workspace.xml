@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42781314-3378-4c64-beb1-8a3644049030" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff/storage_v2/_src_/database/d5bohq4onavh67.iNrMlw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4687c329-f25a-43fe-8086-f63a7dd890ff/storage_v2/_src_/database/d5bohq4onavh67.iNrMlw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RSS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RSS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RSS/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +176,7 @@
       <workItem from="1570190943343" duration="9277000" />
       <workItem from="1570354974936" duration="6527000" />
       <workItem from="1570376157987" duration="147000" />
-      <workItem from="1570437216321" duration="1586000" />
+      <workItem from="1570437216321" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1570023943102</created>
@@ -273,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570369793325</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update add_source">
+      <created>1570439088251</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570439088251</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +291,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="update get_source" />
     <MESSAGE value="update insert_source and delete_source" />
-    <option name="LAST_COMMIT_MESSAGE" value="update insert_source and delete_source" />
+    <MESSAGE value="update add_source" />
+    <option name="LAST_COMMIT_MESSAGE" value="update add_source" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="237" key="#com.intellij.execution.impl.EditConfigurationsDialog" />

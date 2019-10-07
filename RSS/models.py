@@ -287,7 +287,7 @@ def get_source():
 
 def insert_source(**kwargs):
     name = kwargs.get('name')
-    url = kwargs.get('url')
+    url = kwargs.get('link')
     id = kwargs.get('id')
     cursor = connection.cursor()
 
