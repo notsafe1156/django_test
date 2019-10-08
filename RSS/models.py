@@ -311,6 +311,7 @@ def delete_source(id):
     cursor.close()
     return result
 
+
 def change_display_by_id(id, display):
     cursor = connection.cursor()
     cursor.execute("deupdate data\
