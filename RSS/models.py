@@ -219,11 +219,10 @@ def get_info_in_page_server(**kwargs):
 
     cursor = connection.cursor()
     sql = "select id, title, source, category, tag, display\
-                    from data\n\
-                    order by time desc\n"
+                    from data\n"
     if source:
         sql += "where source = '%s'\n" % (source)
-    sql += "limit 20 offset " + str((page - 1) * 20)
+    sql += "order by time desc limit 20 offset " + str((page - 1) * 20)
     cursor.execute(sql)
     result = cursor.fetchall()
 
