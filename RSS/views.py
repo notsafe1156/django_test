@@ -161,7 +161,8 @@ class DataViewSet(viewsets.ModelViewSet):
 
         result = get_info_in_page_client(page=int(page), source=source)
         return Response(result, status.HTTP_200_OK)
-
+ 
+    # 取得所有來源
     @action(methods=['post'], detail=False)
     def get_source_info(self, request):
         account = request.data.get('account')
@@ -172,6 +173,7 @@ class DataViewSet(viewsets.ModelViewSet):
             result = False
         return Response(result, status.HTTP_200_OK)
 
+    # 新增來源
     @action(methods=['post'], detail=False)
     def add_source(self, request):
         name = request.data.get('name')
@@ -180,12 +182,14 @@ class DataViewSet(viewsets.ModelViewSet):
         result = insert_source(name=name, link=link, id=id)
         return Response(result, status.HTTP_200_OK)
 
+    # 刪除來源
     @action(methods=['delete'], detail=False)
     def delete_source(self, request):
         id = request.data.get('id')
         result = delete_source(id)
         return Response(result, status.HTTP_200_OK)
 
+    # 更改display
     @action(methods=['put'], detail=False)
     def change_display(self, request):
         id = request.data.get('id')
