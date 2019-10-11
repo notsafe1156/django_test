@@ -314,7 +314,7 @@ def delete_source(id):
 
 def change_display_by_id(id, display):
     cursor = connection.cursor()
-    cursor.execute("deupdate data\
+    cursor.execute("update data\
                     set display = '%s'\
                     where id = '%s'" % (display, id))
     result = cursor.rowcount

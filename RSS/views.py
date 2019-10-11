@@ -186,9 +186,17 @@ class DataViewSet(viewsets.ModelViewSet):
         result = delete_source(id)
         return Response(result, status.HTTP_200_OK)
 
-    @action(methods=['post'], detail=False)
+    @action(methods=['put'], detail=False)
     def change_display(self, request):
         id = request.data.get('id')
         display = request.data.get('display')
         result = change_display_by_id(id, display)
         return Response(result, status.HTTP_200_OK)
+
+    @action(methods=['delete'], detail=False)
+    def delete_multiple(self, request):
+        id = request.data.get('id')
+        print(id)
+        for a in id:
+            print(a)
+        return Response('test', status.HTTP_200_OK)
