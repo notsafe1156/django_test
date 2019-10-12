@@ -199,8 +199,9 @@ class DataViewSet(viewsets.ModelViewSet):
 
     @action(methods=['delete'], detail=False)
     def delete_multiple(self, request):
-        id = request.data.get('id')
-        print(id)
+        # id = request.data.get('id')
+        id = request.data.getlist('id[]')
+
         for a in id:
             print(a)
         return Response('test', status.HTTP_200_OK)
