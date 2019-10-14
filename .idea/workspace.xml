@@ -175,7 +175,7 @@
       <workItem from="1570522541782" duration="1015000" />
       <workItem from="1570980740016" duration="437000" />
       <workItem from="1571046120516" duration="646000" />
-      <workItem from="1571058119001" duration="334000" />
+      <workItem from="1571058119001" duration="666000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1570023943102</created>
@@ -303,11 +303,29 @@
       <option name="project" value="LOCAL" />
       <updated>1570522939525</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update update_text">
+      <created>1571058598769</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1571058598769</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
@@ -321,7 +339,8 @@
     <MESSAGE value="update add_source" />
     <MESSAGE value="fix add_source" />
     <MESSAGE value="update change_display" />
-    <option name="LAST_COMMIT_MESSAGE" value="update change_display" />
+    <MESSAGE value="update update_text" />
+    <option name="LAST_COMMIT_MESSAGE" value="update update_text" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="237" key="#com.intellij.execution.impl.EditConfigurationsDialog" />

@@ -47,7 +47,7 @@ def update_text(**kwargs):
     cursor.execute("update data\
                             set\
                                 category = '%s',\
-                                tag = '%s',\
+                                tag = '%s'\
                             where id = '%s'" % (category, tag, id))
     num = cursor.rowcount
     return num
