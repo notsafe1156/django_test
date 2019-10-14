@@ -48,8 +48,7 @@ class DataViewSet(viewsets.ModelViewSet):
         id = request.data.get('id')
         category = request.data.get('category')
         tag = request.data.get('tag')
-        display = request.data.get('display')
-        data = update_text(id=id, category=category, tag=tag, display=display)
+        data = update_text(id=id, category=category, tag=tag)
         if data:
             result = '更新完成'
         else:

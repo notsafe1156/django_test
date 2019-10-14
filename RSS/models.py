@@ -42,16 +42,13 @@ def fund_datas(**kwargs):
 def update_text(**kwargs):
     category = kwargs.get('category')
     tag = kwargs.get('tag')
-    display = kwargs.get('display')
     id = kwargs.get('id')
-    print(category, tag, display, id)
     cursor = connection.cursor()
     cursor.execute("update data\
                             set\
                                 category = '%s',\
                                 tag = '%s',\
-                                display = '%s'\
-                            where id = '%s'" % (category, tag, display, id))
+                            where id = '%s'" % (category, tag, id))
     num = cursor.rowcount
     return num
 
